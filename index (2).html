@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrihari Darodkar - Personal Webpage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://your-image-url.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: moveBackground 30s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0 0; }
+        }
+
+        header {
+            background-color: #2c3e50; /* Dark blue color */
+            color: #ecf0f1;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 5rem 1rem;
+            color: #1abc9c; /* Soft green color */
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .geometric {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: #16a085; /* Teal color */
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: moveShape 10s linear infinite;
+        }
+
+        .geometric-3 {
+            position: absolute;
+            top: 600px;
+            left: 100px;
+            width: 120px;
+            height: 120px;
+            background-color: #808080; /* Orange color */
+            border-radius: 10px;
+            opacity: 0.7;
+            animation: moveShape 8s linear infinite;
+        }
+
+        .geometric-4 {
+            position: absolute;
+            top: 400px;
+            left: 500px;
+            width: 80px;
+            height: 80px;
+            background-color: #3498db; /* Blue color */
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: moveShape 9s linear infinite;
+        }
+
+        .geometric-5 {
+            position: absolute;
+            top: 200px;
+            left: 800px;
+            width: 120px;
+            height: 120px;
+            background-color: #9b59b6; /* Purple color */
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: moveShape 11s linear infinite;
+        }
+
+        @keyframes moveShape {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, 30px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        nav {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            text-align: left;
+        }
+
+        .menu {
+            background-color: #16a085; /* Teal color */
+            color: #ecf0f1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2c3e50; /* Dark blue color */
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #1abc9c; /* Soft green color */
+        }
+
+        .show {
+            display: block;
+        }
+
+        .container {
+            display: none;
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            background: rgba(44, 62, 80, 0.9); /* Dark blue with slight opacity */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            margin-top: 50px;
+        }
+
+        .section {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .about, .education, .experience, .skills, .projects, .contact {
+            background: rgba(52, 73, 94, 0.9); /* Slightly lighter blue */
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #1abc9c; /* Soft green color */
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #2c3e50; /* Dark blue color */
+            color: #ecf0f1;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+            document.querySelector('.container').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Shrihari Darodkar</h1>
+    </header>
+
+    <div class="welcome">
+        <p>Hey, welcome to my portfolio! I'm Shrihari.</p>
+    </div>
+
+    <div class="geometric"></div>
+    <div class="geometric-2"></div>
+    <div class="geometric-3"></div>
+    <div class="geometric-4"></div>
+    <div class="geometric-5"></div>
+
+    <nav>
+        <button class="menu" onclick="toggleDropdown()">Menu</button>
+        <div id="dropdown" class="dropdown-content">
+            <a href="#" onclick="showSection('about')">About Me</a>
+            <a href="#" onclick="showSection('education')">Education</a>
+            <a href="#" onclick="showSection('experience')">Experience</a>
+            <a href="#" onclick="showSection('skills')">Skills</a>
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="about" class="section">
+            <div class="about">
+                <h2>About Me</h2>
+                <p>I am an undergraduate student pursuing a B.Tech in Artificial Intelligence and Data Science at Vishwakarma Institute of Technology, Pune, India. My passion lies in utilizing artificial intelligence to address complex, real-world issues, driving innovation, and making a meaningful impact on society.</p>
+            </div>
+        </div>
+
+        <div id="education" class="section">
+            <div class="education">
+                <h2>Education</h2>
+                <p>Currently pursuing B.Tech in Artificial Intelligence and Data Science at Vishwakarma Institute of Technology, Pune, India.</p>
+            </div>
+        </div>
+
+        <div id="experience" class="section">
+            <div class="experience">
+                <h2>Experience</h2>
+                <p>Internships, projects, and other relevant experiences will be listed here.</p>
+                <ul>
+                    <li>Data Science Intern at ABC Company (June 2023 - August 2023): Developed machine learning models to predict customer behavior, improving marketing strategies.</li>
+                    <li>Machine Learning Intern at XYZ Labs (January 2024 - March 2024): Worked on developing predictive models for healthcare data.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="skills" class="section">
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Programming Languages: Python, Java, C++</li>
+                    <li>Data Analysis: Pandas, NumPy, Matplotlib</li>
+                    <li>Machine Learning: Scikit-Learn, TensorFlow, Keras</li>
+                    <li>Web Development: HTML, CSS, JavaScript</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <div class="projects">
+                <h2>Projects</h2>
+                <ul>
+                    <li>Project A: Developed a chatbot using natural language processing techniques to assist users with FAQs.</li>
+                    <li>Project B: Created a web-based application to visualize and analyze stock market data.</li>
+                    <li>Project C: Implemented a machine learning model to predict housing prices based on various features.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <div class="contact">
+                <h2>Contact</h2>
+                <p>Email: shrihari.darodkar@example.com</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/shrihari-darodkar">Shrihari Darodkar</a></p>
+                <p>GitHub: <a href="https://github.com/shriharidarodkar">github.com/shriharidarodkar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Shrihari Darodkar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+just save this code
